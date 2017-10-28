@@ -1,0 +1,32 @@
+.hero-header {
+  height: 300px;
+  .hero-content {
+    text-align: center;
+    position: relative;
+    top: 40px;
+    color: #fff;
+
+  }
+}
+
+h1 {
+  margin: 0px auto;
+}
+
+#features {
+  margin-bottom: 20px;
+  md-card {
+    float:left;
+  }
+}
+
+.feature-card {
+  width: 220px;
+  margin-right: 20px;
+  md-card-title {
+    font-size: 20px;
+  }
+  md-card-content {
+    color: rgb(121, 119, 119);
+  }
+}
