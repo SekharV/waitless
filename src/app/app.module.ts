@@ -9,22 +9,24 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { AuthInterceptor } from './services/http.service';
 import { DrHomeComponent } from './drhome/drhome.component';
+import { DrCalendarComponent } from './drcalendar/drcalendar.component';
+import { DrPaymentsComponent } from './drpayments/drpayments.component';
 // import { FlexLayoutModule } from '@angular/flex-layout';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { RouterModule } from '@angular/router';
 import { ROUTES } from './app.routes';
 
 @NgModule({
   declarations: [
     AppComponent,
-    DrHomeComponent
+    DrHomeComponent,
+    DrCalendarComponent,
+    DrPaymentsComponent
   ],
   imports: [
     BrowserModule,
     HttpModule,
     HttpClientModule,
-    RouterModule.forRoot(ROUTES),
-    NgbModule.forRoot()
+    RouterModule.forRoot(ROUTES)
   ],
   providers: [AccountService,
     {
