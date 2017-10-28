@@ -4,6 +4,9 @@ import { Http,RequestOptionsArgs,Headers,RequestOptions } from '@angular/http';
 @Injectable()
 export class AccountService {
 
+  AuthorizationCode: any;
+  
+
   constructor(private http: Http) {
 
    }
@@ -31,8 +34,9 @@ export class AccountService {
     let options = new RequestOptions({headers: headers});
     var result = this.http.post('https://hackathon.api.extnp.nab.com.au/v2/auth?v=1',body,options);
     result.subscribe(data => {
-      console.log(data);
+      var response = data.json();
+      this.AuthorizationCode = response.loginResponse.tokens[0].value;
+      console.log(this.AuthorizationCode);
     });
-   };//TODO : get Authorization token.
-
+   }
 }
