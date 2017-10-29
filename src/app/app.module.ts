@@ -14,6 +14,7 @@ import { DrCalendarComponent } from './drcalendar/drcalendar.component';
 import { DrPaymentsComponent } from './drpayments/drpayments.component';
 import { PtHomeComponent } from './patient/home.component';
 import { PtAdminComponent } from './patient/admin.component';
+import { PtSearchComponent } from './patient/search.component';
 
 // import { FlexLayoutModule } from '@angular/flex-layout';
 import { RouterModule } from '@angular/router';
@@ -26,7 +27,8 @@ import { ROUTES } from './app.routes';
     DrCalendarComponent,
     DrPaymentsComponent,
     PtHomeComponent,
-    PtAdminComponent
+    PtAdminComponent,
+    PtSearchComponent
   ],
   imports: [
     BrowserModule,

@@ -4,6 +4,7 @@ import { DrCalendarComponent } from './drcalendar/drcalendar.component';
 import { DrPaymentsComponent } from './drpayments/drpayments.component';
 import { PtHomeComponent } from './patient/home.component';
 import { PtAdminComponent } from './patient/admin.component';
+import { PtSearchComponent } from './patient/search.component';
 
 export const ROUTES: Routes = [
   { path: '',      component: DrHomeComponent },
@@ -11,6 +12,7 @@ export const ROUTES: Routes = [
   { path: 'drcalendar',  component: DrCalendarComponent },
   { path: 'drpayments',  component: DrPaymentsComponent },
   { path: 'pthome',  component: PtHomeComponent },
-  { path: 'ptadmin',  component: PtAdminComponent }
+  { path: 'ptadmin',  component: PtAdminComponent },
+  { path: 'ptsearch',  component: PtSearchComponent }
 ];
 
