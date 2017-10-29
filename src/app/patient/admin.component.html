@@ -1,0 +1,102 @@
+<div class="container col-md-12 col-sm-12">
+
+<h1>Welcome Patient xxx</h1>
+
+
+  <div class="form-group">
+    <label for="sel1">Health Issue Select list:</label>
+    <select class="form-control" id="sel1">
+      <option value="1">Arthritis</option>
+      <option>Heart Disease</option>
+      <option>Respiratory Diseases</option>
+      <option>Alzheimer's Disease</option>
+      <option>Osteoporosis</option>
+      <option>Diabetes</option>
+      <option>Influenza and Pneumonia.</option>
+      <option>Cancer</option>
+      <option>Obesity</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="sel2">Your preferred location:</label>
+    <select class="form-control" id="sel2">
+      <option value="1">BoxHill Hospital</option>
+      <option>Albury Wodonga Health (</option>
+      <option>Armidale Hospital</option>
+      <option>Blayney Multi Purpose Service</option>
+      <option>Casino Hospital</option>
+      <option>Cowra Hospital</option>
+      <option>Finley Hospital</option>
+      <option>Gloucester Hospital</option>
+      <option>Ivanhoe Hospital</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <form class="form-inline">
+      <label for="sel2">Your operation is on:</label>
+      <div class="form-group ml-3">
+        <div class="input-group">
+          <input class="form-control" placeholder="yyyy-mm-dd"
+                 name="dp" ngbDatepicker #a="ngbDatepicker">
+          <button class="input-group-addon" (click)="a.toggle()" type="button">
+            <img src="https://ng-bootstrap.github.io/img/calendar-icon.svg" style="width: 1.2rem; height: 1rem; cursor: pointer;"/>
+          </button>
+        </div>
+      </div>
+    </form>
+
+    <hr/>
+  </div>
+  <div class="form-group">
+    <form class="form-inline">
+      <label for="sel2">Consultation 1:</label>
+      <div class="form-group ml-3">
+        <div class="input-group">
+          <input class="form-control" placeholder="yyyy-mm-dd"
+                 name="con1" ngbDatepicker #b="ngbDatepicker">
+          <button class="input-group-addon" (click)="b.toggle()" type="button">
+            <img src="https://ng-bootstrap.github.io/img/calendar-icon.svg" style="width: 1.2rem; height: 1rem; cursor: pointer;"/>
+          </button>
+        </div>
+      </div>
+    </form>
+
+    <hr/>
+  </div>
+  <div class="form-group">
+    <form class="form-inline">
+      <label>Consultation 2:</label>
+      <div class="form-group ml-3">
+        <div class="input-group">
+          <input class="form-control" placeholder="yyyy-mm-dd"
+                 name="con1" ngbDatepicker #c="ngbDatepicker">
+          <button class="input-group-addon" (click)="c.toggle()" type="button">
+            <img src="https://ng-bootstrap.github.io/img/calendar-icon.svg" style="width: 1.2rem; height: 1rem; cursor: pointer;"/>
+          </button>
+        </div>
+      </div>
+    </form>
+    <hr/>
+  </div>
+  <div class="form-group">
+    <form class="form-inline">
+      <label>Consultation 3:</label>
+      <div class="form-group ml-3">
+        <div class="input-group">
+          <input class="form-control" placeholder="yyyy-mm-dd"
+                 name="con1" ngbDatepicker #d="ngbDatepicker">
+          <button class="input-group-addon" (click)="d.toggle()" type="button">
+            <img src="https://ng-bootstrap.github.io/img/calendar-icon.svg" style="width: 1.2rem; height: 1rem; cursor: pointer;"/>
+          </button>
+        </div>
+      </div>
+    </form>
+    <hr/>
+  </div>
+  <div class="form-group">
+      <label>Need it Earlier?</label>
+      <a class="btn btn-primary" href="/ptsearch">Check other options</a>
+    <hr/>
+  </div>
+</div> <!-- /container -->
