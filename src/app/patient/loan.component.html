@@ -1,0 +1,626 @@
+<div class="container col-md-12 col-sm-12">
+
+<h1>Apply for Loan</h1>
+
+
+  <div class="col-md-6 col-sm-12 float-left">
+    <ul class="list-group">
+      <li class="list-group-item active" (click)="onButtonGroupClick($event)">$500</li>
+      <li class="list-group-item" (click)="onButtonGroupClick($event)">$1000</li>
+      <li class="list-group-item" (click)="onButtonGroupClick($event)">$2000</li>
+      <li class="list-group-item" (click)="onButtonGroupClick($event)">$5000</li>
+      <li class="list-group-item" (click)="onButtonGroupClick($event)">$10000</li>
+    </ul>
+    <hr/>
+  </div>
+
+  <div class="col-md-6 col-sm-12 float-left">
+    <div class="application-form-section" id="personDetailsSection">
+      <h3>ID check</h3>
+      <div class="application-form-columnsof2">
+        <div class="application-form-column-2">
+          <div class="application-form-row">
+            <label class="application-form-label" for="firstname">First Name </label>
+            <div class="application-form-field">
+              <input type="text" id="firstname" name="PersonDetail.Firstname" class="text-field" data-bind="value: firstname, dataValidationBinding: firstname, titleCaseString: firstname , attr: { 'readonly' : !allowCustomerDetailEdit() }" data-input-format="name" maxlength="64" title="Please enter your first name" data-orig-title=""><span class="application-form-error" style="display: none;"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="application-form-columnsof2">
+        <div class="application-form-column-1">
+          <div class="application-form-row">
+            <label class="application-form-label" for="middlename">Middle Name (optional)</label>
+            <div class="application-form-field">
+              <input type="text" id="middlename" name="PersonDetail.Middlename" class="text-field" data-bind="value: middlename, dataValidationBinding: middlename, titleCaseString: middlename, attr: { 'readonly' : !allowCustomerDetailEdit() }" data-input-format="name" maxlength="64" title=""><span class="application-form-error" style="display: none;"></span>
+            </div>
+          </div>
+        </div>
+        <div class="application-form-column-2">
+          <div class="application-form-row">
+            <label class="application-form-label" for="PersonDetail.Lastname">Last Name </label>
+            <div class="application-form-field">
+              <input type="text" id="PersonDetail.Lastname" name="PersonDetail.Lastname" class="text-field" data-bind="value: lastname, dataValidationBinding: lastname, titleCaseString: lastname, attr: { 'readonly' : !allowCustomerDetailEdit() }" data-input-format="name" maxlength="64" title="Please enter your last name" data-orig-title=""><span class="application-form-error" style="display: none;"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="application-form-columnsof2">
+        <div class="application-form-column-1">
+          <div class="application-form-row">
+            <label class="application-form-label" for="PersonDetail.DateOfBirth">Date of birth </label>
+            <div class="application-form-field application-form-field--date">
+              <input type="text" id="PersonDetail.DateOfBirth" name="PersonDetail.DateOfBirth" class="date text-field" placeholder="dd/mm/yyyy" data-bind="value: dateOfBirth, dataValidationBinding: dateOfBirth, attr: { 'readonly' : !allowCustomerDetailEdit() }, event:{click: initDateOfBirth, touchstart: initDateOfBirth}" data-input-format="date" maxlength="11" title="Please enter Date of Birth" data-orig-title=""><span class="application-form-error" style="display: none;"></span>
+              <label for="PersonDetail.DateOfBirth"></label>
+            </div>
+          </div>
+        </div>
+
+        <div class="application-form-column-2">
+          <div class="application-form-row">
+            <label class="application-form-label" for="PersonDetail.EmailAddress">Email address</label>
+            <div class="application-form-field">
+              <input type="email" id="PersonDetail.EmailAddress" name="PersonDetail.EmailAddress" class="text-field" data-bind="value: emailAddress, dataValidationBinding: emailAddress, attr: { 'readonly' : !allowCustomerDetailEdit() }" data-input-format="email" maxlength="300" title="Please enter a valid email address" data-orig-title=""><span class="application-form-error" style="display: none;"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="application-form-columnsof2">
+        <div class="application-form-column-1">
+          <div class="application-form-row">
+            <label class="application-form-label" for="gender-M">Gender</label>
+            <div class="form-toggle">
+              <div class="form-toggle-inner">
+                <label class="form-toggle-button" data-bind="css: { 'is-active': gender()=='M' }, click: setGender.bind($data, 'M')">
+                  <div class="form-toggle-button-label">Male</div>
+                  <input id="gender-M" type="radio" value="M" data-bind="checked: gender, attr: { 'readonly' : !allowCustomerDetailEdit() }" name="PersonDetail.Gender">
+                </label>
+                <label class="form-toggle-button" data-bind="css: { 'is-active': gender()=='F' }, click: setGender.bind($data, 'F')">
+                  <div class="form-toggle-button-label">Female</div>
+                  <input type="radio" value="F" data-bind="checked: gender, attr: { 'readonly' : !allowCustomerDetailEdit() }" name="PersonDetail.Gender">
+                </label>
+              </div>
+            </div>
+            <span class="application-form-error" data-bind="validationMessage: gender" style="display: none;"></span>
+          </div>
+        </div>
+        <div class="application-form-column-2">
+          <div class="application-form-row">
+            <label class="application-form-label" for="IsPermanentResident" data-bind="text: permanentResidentQuestion">Are you a permanent resident of Australia?</label>
+            <div class="form-toggle">
+              <div class="form-toggle-inner">
+                <label class="form-toggle-button" data-bind="css: { 'is-active': isPermanentResident()=='Y' }">
+                  <div class="form-toggle-button-label">Yes</div>
+                  <input id="IsPermanentResident" type="radio" name="PersonDetail.IsPermanentResident" data-bind="checked: isPermanentResident" value="Y">
+                </label>
+                <label class="form-toggle-button" data-bind="css: { 'is-active': isPermanentResident()=='N' }">
+                  <div class="form-toggle-button-label">No</div>
+                  <input type="radio" name="PersonDetail.IsPermanentResident" data-bind="checked: isPermanentResident" value="N">
+                </label>
+              </div>
+            </div>
+            <span class="application-form-error" data-bind="validationMessage: isPermanentResident" style="display: none;"></span>
+            <div class="application-form-error" data-bind="visible: (isPermanentResident()=='N')" style="display: none;">Sorry! You are not a Australian Resident, you are not eligible for a loan with us.</div>
+          </div>
+        </div>
+      </div>
+      <div data-bind="visible: hasInitiatedIdentityEstablish" style="display: none;">
+        <span class="application-form-error" data-bind="validationMessage: identityEstablished" style="display: none;"></span>
+      </div>
+
+      <div id="authenticationSection">
+
+
+      </div>
+
+      <span class="application-form-error" data-bind="validationMessage: password" style="display: none;"></span>
+      <span class="application-form-error" data-bind="validationMessage: confirmPassword" style="display: none;"></span>
+
+    </div>
+    <hr/>
+    <h3>Your Financial Capacity</h3>
+    <div id="financialDetailSection">
+
+      <div id="financialCapabilitySection" class="form-field-wrap">
+        <div class="application-form-columnsof2">
+          <div class="application-form-column-1">
+            <div class="application-form-row">
+              <label class="application-form-label" for="soleincomeearner">Are you the sole income earner of your household? </label>
+              <div class="application-form-field">
+                <div class="form-toggle">
+                  <div class="form-toggle-inner">
+                    <label class="form-toggle-button" data-bind="css: { 'is-active':isSoleIncomeEarner()=='Y' }">
+                      <div class="form-toggle-button-label">Yes</div>
+                      <input id="soleincomeearner" type="radio" name="PersonDetail.IsSoleIncomeEarner" value="Y" data-bind="checked: isSoleIncomeEarner">
+                    </label>
+                    <label class="form-toggle-button" data-bind="css: { 'is-active':isSoleIncomeEarner()=='N' }">
+                      <div class="form-toggle-button-label">No</div>
+                      <input type="radio" name="PersonDetail.IsSoleIncomeEarner" value="N" data-bind="checked: isSoleIncomeEarner">
+                    </label>
+                  </div>
+                </div>
+
+                <span class="application-form-error" data-bind="validationMessage: isSoleIncomeEarner" style="display: none;"></span>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="application-form-column-2">
+            <div class="application-form-row">
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+
+
+
+      <div id="incomeSection">
+        <h3>Your Income</h3>
+        <div data-bind="foreach: incomeSources">
+          <div class="application-form-columnsof2">
+            <div class="application-form-column-1">
+              <div class="application-form-row">
+                <label class="application-form-label" data-bind="attr: { for: &quot;Incomeaftertax_&quot; + $index() }" for="Incomeaftertax_0"><span data-bind="text: incomeCaptionWithTaxStatus">Employment Income (after tax) </span><span class="application-form-tooltip tipso_style" rel="tooltip" data-bind="attr: { 'title' : tooltip }"></span></label>
+                <div class="application-form-field">
+                  <input id="Incomeaftertax_0" class="text-field" data-input-format="currency" data-bind="attr: { id: &quot;Incomeaftertax_&quot; + $index(), name:&quot;IncomeSources[&quot; + $index() + &quot;].IncomeAmount&quot;}, value:incomeAmount, dataValidationBinding: incomeAmount " type="text" name="IncomeSources[0].IncomeAmount" title=""><span class="application-form-error" style="display: none;"></span>
+                  <input type="hidden" data-bind="attr: { name:&quot;IncomeSources[&quot; + $index() + &quot;].IncomeSource&quot;}, value: incomeSource" name="IncomeSources[0].IncomeSource" value="">
+                  <div data-bind="ifnot: requireIncomeSourceType">
+                    <input type="hidden" data-bind="attr: { name:&quot;IncomeSources[&quot; + $index() + &quot;].IncomeSourceId&quot;}, value: incomeSourceId" name="IncomeSources[0].IncomeSourceId" value="65">
+                  </div>
+                  <input type="hidden" data-bind="attr: { name:&quot;IncomeSources[&quot; + $index() + &quot;].IsGovernmentBenefit&quot;}, value: isGovernmentBenefit" name="IncomeSources[0].IsGovernmentBenefit" value="false">
+                </div>
+              </div>
+            </div>
+            <div class="application-form-column-2">
+              <div class="application-form-row">
+                <label class="application-form-label" for="IncomeSources[0].IncomeFrequency" data-bind="attr: { for:&quot;IncomeSources[&quot; + $index() + &quot;].IncomeFrequency&quot;},">Pay Frequency </label>
+
+                <div class="application-form-field">
+                  <div class="form-toggle">
+                    <div class="form-toggle-inner">
+                      <label class="form-toggle-button" data-bind="css : { 'is-active': incomeFrequency()=='11' }">
+                        <div class="form-toggle-button-label">Weekly</div>
+                        <input type="radio" value="11" id="IncomeSources[0].IncomeFrequency" data-bind="attr: { name:&quot;IncomeSources[&quot; + $index() + &quot;].IncomeFrequency&quot;}, checked: incomeFrequency,attr: { id:&quot;IncomeSources[&quot; + $index() + &quot;].IncomeFrequency&quot;}," name="ko_unique_1">
+                      </label>
+
+                      <label class="form-toggle-button" data-bind="css : { 'is-active': incomeFrequency()=='12' }">
+                        <div class="form-toggle-button-label">Fortnightly</div>
+                        <input type="radio" value="12" data-bind="attr: { name:&quot;IncomeSources[&quot; + $index() + &quot;].IncomeFrequency&quot;}, checked: incomeFrequency" name="IncomeSources[0].IncomeFrequency">
+                      </label>
+
+                      <label class="form-toggle-button" data-bind="css : { 'is-active': incomeFrequency()=='15' }">
+                        <div class="form-toggle-button-label">Monthly</div>
+                        <input type="radio" value="15" data-bind="attr: { name:&quot;IncomeSources[&quot; + $index() + &quot;].IncomeFrequency&quot;}, checked: incomeFrequency" name="IncomeSources[0].IncomeFrequency">
+                      </label>
+                    </div>
+                  </div>
+
+                  <input type="hidden" data-bind="attr: { name:&quot;IncomeSources[&quot; + $index() + &quot;].incomeSource&quot;}, value: incomeSource" name="IncomeSources[0].incomeSource" value="">
+                  <input type="hidden" data-bind="attr: { name:&quot;IncomeSources[&quot; + $index() + &quot;].incomeSourceId&quot;}, value: incomeSourceId" name="IncomeSources[0].incomeSourceId" value="65">
+                  <input type="hidden" data-bind="attr: { name:&quot;IncomeSources[&quot; + $index() + &quot;].IncomeFrequency&quot;}, value: incomeFrequency" name="IncomeSources[0].IncomeFrequency" value="" class="" title=""><span class="application-form-error" style="display: none;"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="application-form-columnsof2">
+            <div class="application-form-column-1">
+              <div class="application-form-row">
+                <label class="application-form-label" data-bind="attr: { for: &quot;Incomeaftertax_&quot; + $index() }" for="Incomeaftertax_1"><span data-bind="text: incomeCaptionWithTaxStatus">Government Benefits</span><span class="application-form-tooltip tipso_style" rel="tooltip" data-bind="attr: { 'title' : tooltip }"></span></label>
+                <div class="application-form-field">
+                  <input id="Incomeaftertax_1" class="text-field" data-input-format="currency" data-bind="attr: { id: &quot;Incomeaftertax_&quot; + $index(), name:&quot;IncomeSources[&quot; + $index() + &quot;].IncomeAmount&quot;}, value:incomeAmount, dataValidationBinding: incomeAmount " type="text" name="IncomeSources[1].IncomeAmount" title=""><span class="application-form-error" style="display: none;"></span>
+                  <input type="hidden" data-bind="attr: { name:&quot;IncomeSources[&quot; + $index() + &quot;].IncomeSource&quot;}, value: incomeSource" name="IncomeSources[1].IncomeSource" value="">
+                  <div data-bind="ifnot: requireIncomeSourceType">
+                    <input type="hidden" data-bind="attr: { name:&quot;IncomeSources[&quot; + $index() + &quot;].IncomeSourceId&quot;}, value: incomeSourceId" name="IncomeSources[1].IncomeSourceId" value="26">
+                  </div>
+                  <input type="hidden" data-bind="attr: { name:&quot;IncomeSources[&quot; + $index() + &quot;].IsGovernmentBenefit&quot;}, value: isGovernmentBenefit" name="IncomeSources[1].IsGovernmentBenefit" value="true">
+                </div>
+              </div>
+            </div>
+            <div class="application-form-column-2">
+              <div class="application-form-row">
+                <label class="application-form-label" for="IncomeSources[1].IncomeFrequency" data-bind="attr: { for:&quot;IncomeSources[&quot; + $index() + &quot;].IncomeFrequency&quot;},">Pay Frequency </label>
+
+                <div class="application-form-field">
+                  <div class="form-toggle">
+                    <div class="form-toggle-inner">
+                      <label class="form-toggle-button" data-bind="css : { 'is-active': incomeFrequency()=='11' }">
+                        <div class="form-toggle-button-label">Weekly</div>
+                        <input type="radio" value="11" id="IncomeSources[1].IncomeFrequency" data-bind="attr: { name:&quot;IncomeSources[&quot; + $index() + &quot;].IncomeFrequency&quot;}, checked: incomeFrequency,attr: { id:&quot;IncomeSources[&quot; + $index() + &quot;].IncomeFrequency&quot;}," name="ko_unique_2">
+                      </label>
+
+                      <label class="form-toggle-button" data-bind="css : { 'is-active': incomeFrequency()=='12' }">
+                        <div class="form-toggle-button-label">Fortnightly</div>
+                        <input type="radio" value="12" data-bind="attr: { name:&quot;IncomeSources[&quot; + $index() + &quot;].IncomeFrequency&quot;}, checked: incomeFrequency" name="IncomeSources[1].IncomeFrequency">
+                      </label>
+
+                      <label class="form-toggle-button" data-bind="css : { 'is-active': incomeFrequency()=='15' }">
+                        <div class="form-toggle-button-label">Monthly</div>
+                        <input type="radio" value="15" data-bind="attr: { name:&quot;IncomeSources[&quot; + $index() + &quot;].IncomeFrequency&quot;}, checked: incomeFrequency" name="IncomeSources[1].IncomeFrequency">
+                      </label>
+                    </div>
+                  </div>
+
+                  <input type="hidden" data-bind="attr: { name:&quot;IncomeSources[&quot; + $index() + &quot;].incomeSource&quot;}, value: incomeSource" name="IncomeSources[1].incomeSource" value="">
+                  <input type="hidden" data-bind="attr: { name:&quot;IncomeSources[&quot; + $index() + &quot;].incomeSourceId&quot;}, value: incomeSourceId" name="IncomeSources[1].incomeSourceId" value="26">
+                  <input type="hidden" data-bind="attr: { name:&quot;IncomeSources[&quot; + $index() + &quot;].IncomeFrequency&quot;}, value: incomeFrequency" name="IncomeSources[1].IncomeFrequency" value="" class="" title=""><span class="application-form-error" style="display: none;"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <span class="application-form-error" data-bind="validationMessage: hasAtLeastOneFulltimeOrGovernmentBenefit" style="display: none;"></span>
+      </div>
+      <div id="expensesSection">
+        <h3>Your Expenses</h3>
+        <div class="application-form-columnsof2">
+          <div class="application-form-column-1">
+            <div class="application-form-row">
+              <label class="application-form-label" for="RentMortgageRepayment">Housing expenses<span class="application-form-tooltip tipso_style" rel="tooltip"></span></label>
+              <div class="application-form-field">
+                <input type="text" id="RentMortgageRepayment" class="text-field" data-input-format="currency" data-bind="value: rentMortgageRepayment, dataValidationBinding: rentMortgageRepayment" name="Expenses.RentMortgageRepayment" title="Please enter your rent/mortgage expenses" data-orig-title=""><span class="application-form-error" style="display: none;"></span>
+              </div>
+            </div>
+          </div>
+          <div class="application-form-column-2">
+            <div class="application-form-row">
+              <label class="application-form-label" for="rentMortgagePaymentFrequencyId">Housing expenses frequency </label>
+              <div class="application-form-field">
+
+                <div class="form-toggle">
+                  <div class="form-toggle-inner">
+                    <label class="form-toggle-button" data-bind="css : { 'is-active': rentMortgagePaymentFrequencyId()=='11' }">
+                      <div class="form-toggle-button-label">Weekly</div>
+                      <input type="radio" value="11" id="rentMortgagePaymentFrequencyId" data-bind="checked: rentMortgagePaymentFrequencyId" name="Expenses.RentMortgagePaymentFrequencyId">
+                    </label>
+
+                    <label class="form-toggle-button" data-bind="css : { 'is-active': rentMortgagePaymentFrequencyId()=='12' }">
+                      <div class="form-toggle-button-label">Fortnightly</div>
+                      <input type="radio" value="12" data-bind="checked: rentMortgagePaymentFrequencyId" name="Expenses.RentMortgagePaymentFrequencyId">
+                    </label>
+
+                    <label class="form-toggle-button" data-bind="css : { 'is-active':  rentMortgagePaymentFrequencyId()=='15' }">
+                      <div class="form-toggle-button-label">Monthly</div>
+                      <input type="radio" value="15" data-bind="checked: rentMortgagePaymentFrequencyId" name="Expenses.RentMortgagePaymentFrequencyId">
+                    </label>
+
+                  </div>
+                </div>
+
+                <input type="hidden" name="Expenses.RentMortgagePaymentFrequencyId" data-bind="value: rentMortgagePaymentFrequencyId" value="" class="" title="Please choose one" data-orig-title=""><span class="application-form-error" style="display: none;"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="application-form-columnsof2">
+          <div class="application-form-column-1">
+            <div class="application-form-row">
+              <label class="application-form-label" for="LivingExpenses">Living Expenses <span class="application-form-tooltip tipso_style" rel="tooltip"></span></label>
+              <div class="application-form-field">
+                <input type="text" id="LivingExpenses" class="text-field" data-input-format="currency" data-bind="value: livingExpensesAmount, dataValidationBinding: livingExpensesAmount" name="Expenses.LivingExpensesAmount" title="Please enter your living expenses" data-orig-title=""><span class="application-form-error" style="display: none;"></span>
+              </div>
+            </div>
+          </div>
+          <div class="application-form-column-2">
+            <div class="application-form-row">
+              <label class="application-form-label" for="LivingExpensesPaymentFrequencyWeekly">Living expenses frequency</label>
+              <div class="application-form-field">
+
+                <div class="form-toggle">
+                  <div class="form-toggle-inner">
+                    <label class="form-toggle-button" data-bind="css : { 'is-active': livingExpensesPaymentFrequencyId()=='11' }">
+                      <div class="form-toggle-button-label">Weekly</div>
+                      <input type="radio" value="11" data-bind="checked: livingExpensesPaymentFrequencyId" id="LivingExpensesPaymentFrequencyWeekly" name="Expenses.LivingExpensesPaymentFrequencyId">
+                    </label>
+
+                    <label class="form-toggle-button" data-bind="css : { 'is-active': livingExpensesPaymentFrequencyId()=='12' }">
+                      <div class="form-toggle-button-label">Fortnightly</div>
+                      <input type="radio" value="12" data-bind="checked: livingExpensesPaymentFrequencyId" name="Expenses.LivingExpensesPaymentFrequencyId">
+                    </label>
+
+                    <label class="form-toggle-button" data-bind="css : { 'is-active': livingExpensesPaymentFrequencyId()=='15' }">
+                      <div class="form-toggle-button-label">Monthly</div>
+                      <input type="radio" value="15" data-bind="checked: livingExpensesPaymentFrequencyId" name="Expenses.LivingExpensesPaymentFrequencyId">
+                    </label>
+
+                  </div>
+                </div>
+
+                <input type="hidden" name="Expenses.LivingExpensesPaymentFrequencyId" data-bind="value: livingExpensesPaymentFrequencyId" value="" class="" title="Please choose one" data-orig-title=""><span class="application-form-error" style="display: none;"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="application-form-columnsof2">
+          <div class="application-form-column-1">
+            <div class="application-form-row">
+              <label class="application-form-label" for="NumberofCreditCards">Number of Credit Cards <span class="application-form-tooltip tipso_style" rel="tooltip"></span></label>
+              <div class="application-form-field">
+                <input type="number" id="NumberofCreditCards" class="text-field" data-input-format="integer" data-bind="value: numberOfCreditCards, dataValidationBinding: numberOfCreditCards" name="Expenses.NumberOfCreditCards" title="Please enter your number of credit cards" data-orig-title=""><span class="application-form-error" style="display: none;"></span>
+              </div>
+            </div>
+          </div>
+          <div class="application-form-column-2">
+            <div class="application-form-row">
+              <label class="application-form-label" for="TotalLimitofCreditCards">Total Limit of Credit Cards <span class="application-form-tooltip tipso_style" rel="tooltip"></span></label>
+              <div class="application-form-field">
+                <input type="text" id="TotalLimitofCreditCards" class="text-field" data-input-format="currency" data-bind="value: totalLimitOfCreditCards, dataValidationBinding: totalLimitOfCreditCards" name="Expenses.TotalLimitOfCreditCards" title="Please enter total limit of your credit cards" data-orig-title=""><span class="application-form-error" style="display: none;"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="application-form-columnsof2">
+          <div class="application-form-column-1">
+            <div class="application-form-row">
+              <label class="application-form-label" for="TotalMonthlyLoanRepayment">Total Monthly Loan Repayment <span class="application-form-tooltip tipso_style" rel="tooltip"></span></label>
+              <div class="application-form-field">
+                <input type="text" id="TotalMonthlyLoanRepayment" class="text-field" data-input-format="currency" data-bind="value: totalMonthlyLoanRepayment, dataValidationBinding: totalMonthlyLoanRepayment" name="Expenses.TotalMonthlyLoanRepayment" title="Please enter how much you pay every month for your loan repayments. If you have no loans, just put in 0" data-orig-title=""><span class="application-form-error" style="display: none;"></span>
+              </div>
+            </div>
+          </div>
+          <div class="application-form-column-2">
+            <div class="application-form-row">
+
+
+
+              <div class="application-form-field">
+                <div class="application-form-label application-nolabel"></div>
+                <div class="application-form-row application-linkwrap">
+                  <div class="application-linkwrap-inner">
+                    <a href="javascript:;" id="monthlyLoanCalculationPopupLaunch" class="monthlyLoanCalculationPopupLaunch">Help me calculate this</a>
+                  </div>
+                </div>
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="application-form-separator"></div>
+
+      <div id="monthlyLoanCalculatorPopup" class="popup-container mfp-hide loan-calulator-popup form--defaultstyle" data-bind="stopBindings: true">
+        <div id="fixedLoanContainer">
+          <div class="fixedloan-list" data-bind="foreach: fixedLoans">
+            <div class="fixedloan-item">
+              <h3 data-bind="text: GlobalFunctions.nTh($index()+1, 'Fixed Loan')">1st Fixed Loan</h3>
+
+
+              <div class="application-form-columnsof2">
+                <div class="application-form-column-1">
+                  <div class="application-form-row">
+                    <label class="application-form-label" data-bind="attr: { for: 'Creditor_' + $index() }" for="Creditor_0">Creditor</label>
+                    <div class="application-form-field">
+                      <input type="text" class="text-field" maxlength="200" data-bind="attr: { id: &quot;Creditor_&quot; + $index(), name: &quot;FixedLoans[&quot; + $index() + &quot;].Creditor&quot; }, value: creditor, dataValidationBinding: creditor" data-input-format="alpha" id="Creditor_0" name="FixedLoans[0].Creditor">
+                    </div>
+                  </div>
+                </div>
+                <div class="application-form-column-2">
+                  <div class="application-form-row">
+                    <label class="application-form-label" data-bind="attr: { for: 'BalanceRemaining_' + $index() }" for="BalanceRemaining_0">Repayment Amount</label>
+                    <div class="application-form-field">
+                      <input type="text" class="text-field" data-input-format="currency" data-bind="attr: { id: &quot;BalanceRemaining_&quot; + $index(), name: &quot;FixedLoans[&quot; + $index() + &quot;].RepaymentAmount&quot; }, value: repaymentAmount, dataValidationBinding: repaymentAmount" id="BalanceRemaining_0" name="FixedLoans[0].RepaymentAmount">
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="application-form-columnsof2">
+                <div class="application-form-column-1">
+                  <div class="application-form-row">
+                    <label class="application-form-label" data-bind="attr: { for: 'PaymentFrequency_' + $index() }" for="PaymentFrequency_0">Payment Frequency</label>
+                    <div class="form-toggle">
+                      <div class="form-toggle-inner">
+                        <label class="form-toggle-button" data-bind="css : { 'is-active': repaymentFrequency()=='11'}">
+                          <div class="form-toggle-button-label">Weekly</div>
+                          <input type="radio" value="11" data-bind="attr: { name: &quot;FixedLoans[&quot; + $index() + &quot;].RepaymentFrequency&quot; }, checked: repaymentFrequency, attr: { id: &quot;PaymentFrequency_&quot; + $index() }" id="PaymentFrequency_0" name="ko_unique_3">
+                        </label>
+
+                        <label class="form-toggle-button" data-bind="css : { 'is-active': repaymentFrequency()=='12' }">
+                          <div class="form-toggle-button-label">Fortnightly</div>
+                          <input type="radio" value="12" data-bind="attr: { name: &quot;FixedLoans[&quot; + $index() + &quot;].RepaymentFrequency&quot; }, checked: repaymentFrequency" name="FixedLoans[0].RepaymentFrequency">
+                        </label>
+
+                        <label class="form-toggle-button" data-bind="css : { 'is-active':  repaymentFrequency()=='15' }">
+                          <div class="form-toggle-button-label">Monthly</div>
+                          <input type="radio" value="15" data-bind="attr: { name: &quot;FixedLoans[&quot; + $index() + &quot;].RepaymentFrequency&quot; }, checked: repaymentFrequency" name="FixedLoans[0].RepaymentFrequency">
+                        </label>
+
+
+                      </div>
+                      <div class="validation-img" data-bind="validationImg: repaymentFrequency"></div>
+                      <span class="application-form-error" data-bind="validationMessage: repaymentFrequency" style="display: none;"></span>
+                    </div>
+                  </div>
+                </div>
+                <div class="application-form-column-2">
+                  <div class="application-form-row">
+
+                  </div>
+                </div>
+              </div>
+
+
+              <a href="#" class="fixedloan-collection-remove-button" data-bind="click: $parent.removeFixedLoan, visible: $parent.showRemoveLink" style="display: none;"><i class="fixedloan-collection-remove-button"></i>Remove fixed loan</a>
+
+            </div>
+          </div>
+          <a href="#" data-bind="click: addFixedLoan, visible: fixedLoans().length < MAX_FIXED_LOAN_COUNT" class="fixedloan-collection-add-button"><i class="fixedloan-collection-add-button-icon"></i>Add another fixed loan</a>
+
+          <div class="fixedloan-donebutton ">
+            <a class="button--primary-small" href="#" data-bind="click: $.magnificPopup.close">Done</a>
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <h3>Where would you like the money paid if approved?</h3>
+      <div id="bankDetailsSection">
+
+
+        <p>Please enter the details of the bank account where your primary income source is paid into only. This is the same account where the money will paid on approval and where your repayments will be deducted from.
+        </p>
+        <div class="application-form-columnsof2">
+          <div class="application-form-column-1">
+            <div class="application-form-row">
+              <label class="application-form-label" for="AccountName">Your Account Name <span class="application-form-tooltip tipso_style" rel="tooltip"></span></label>
+              <div class="application-form-field">
+                <input type="text" id="AccountName" name="BankDetail.AccountName" class="text-field" data-bind="value: accountName, dataValidationBinding: accountName" data-input-format="name" maxlength="100" title="Please enter an account name" data-orig-title=""><span class="application-form-error" style="display: none;"></span>
+              </div>
+            </div>
+          </div>
+          <div class="application-form-column-2">
+            <div class="application-form-row">
+
+            </div>
+          </div>
+        </div>
+
+
+
+        <div class="application-form-columnsof2">
+          <div class="application-form-column-1">
+            <div class="application-form-row">
+              <label class="application-form-label" for="BSB">BSB</label>
+              <div class="application-form-field">
+                <input type="number" name="BankDetail.BSB" id="BSB" class="text-field" data-bind="value: bsb, dataValidationBinding: bsb" maxlength="7" data-input-format="bsbNumber" title="Please enter a valid BSB number." data-orig-title=""><span class="application-form-error" style="display: none;"></span>
+                <input type="hidden" name="BankDetail.BSBValidated" class="text-field" data-bind="value: bsbValidated" value="N">
+                <input type="hidden" name="BankDetail.BankName" class="text-field" data-bind="value: bankName" value="">
+              </div>
+            </div>
+          </div>
+          <div class="application-form-column-2">
+            <label class="application-form-label" for="AccountNumber">Your Account Number</label>
+            <div class="application-form-field">
+              <input type="text" id="AccountNumber" name="BankDetail.AccountNumber" class="text-field" data-input-format="integer" pattern="[0-9]*" data-bind="value: accountNumber, dataValidationBinding: accountNumber" maxlength="30" title="Please enter an account number" data-orig-title=""><span class="application-form-error" style="display: none;"></span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="application-form-separator"></div>
+
+      <div id="miscInfoSection">
+
+        <div class="application-form-columnsof2">
+          <div class="application-form-column-1">
+            <div class="application-form-row">
+              <label class="application-form-label application-form-label--wide" for="isableToRepay">Can you foresee any reason you won't be able to repay this Smart loan?</label>
+
+              <div class="form-toggle">
+                <div class="form-toggle-inner">
+                  <label class="form-toggle-button" data-bind="css: { 'is-active': canForeseeReasonLoanCannotBeRepaid()=='Y' }">
+                    <div class="form-toggle-button-label">Yes</div>
+                    <input id="isableToRepay" type="radio" name="isableToRepay" data-bind="checked: canForeseeReasonLoanCannotBeRepaid" value="Y">
+                  </label>
+                  <label class="form-toggle-button" data-bind="css: { 'is-active': canForeseeReasonLoanCannotBeRepaid()=='N' }">
+                    <div class="form-toggle-button-label">No</div>
+                    <input type="radio" name="isableToRepay" data-bind="checked: canForeseeReasonLoanCannotBeRepaid" value="N">
+                  </label>
+                </div>
+              </div>
+
+              <div class="application-form-field">
+                <input type="hidden" name="CanForeseeReasonLoanCannotBeRepaid" data-bind="value: canForeseeReasonLoanCannotBeRepaid" value="" class="" title="Please select an option for this question" data-orig-title=""><span class="application-form-error" style="display: none;"></span>
+              </div>
+            </div>
+          </div>
+          <div class="application-form-column-2">
+            <div class="application-form-row">
+
+            </div>
+          </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+        <div class="application-form-row">
+          <div class="application-form-field">
+
+            <div class="form-checkboxandlabel">
+              <div class="form-checkboxandlabel-check">
+                <label class="form-checkbox">
+                  <input type="checkbox" data-bind="checked: informationIsTrueAndAccurate" id="informationIsTrueAndAccurate">
+                  <div class="form-checkbox-indicator"></div>
+                </label>
+              </div>
+              <div class="form-checkboxandlabel-label">
+                <label for="informationIsTrueAndAccurate">I declare that the information I have provided is true and accurate</label>
+              </div>
+            </div>
+            <input type="hidden" name="MiscellaneousInfo.InformationIsTrueAndAccurate" data-bind="value: informationIsTrueAndAccurate" value="" class="" title="Please ensure that you declare truthfulness of the above information" data-orig-title=""><span class="application-form-error" style="display: none;"></span>
+          </div>
+        </div>
+
+
+
+        <div class="application-form-row">
+          <div class="application-form-field">
+
+            <div class="form-checkboxandlabel">
+              <div class="form-checkboxandlabel-check">
+                <label class="form-checkbox">
+                  <input type="checkbox" data-bind="checked: subscribeToNewsAndOffers" id="subscribeToNewsAndOffers">
+                  <div class="form-checkbox-indicator"></div>
+                </label>
+              </div>
+              <div class="form-checkboxandlabel-label">
+                <label for="subscribeToNewsAndOffers">I would like to hear from Wallet Wizard about loan offers that may interest me
+                  <input type="hidden" name="MiscellaneousInfo.SubscribeToNewsAndOffers" data-bind="value: subscribeToNewsAndOffers" value=""></label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="application-form-row">
+          <div class="application-form-field">
+
+            <div class="form-checkboxandlabel">
+              <div class="form-checkboxandlabel-check">
+                <label class="form-checkbox">
+                  <input type="checkbox" id="AgreeToTermsAndConditions" data-bind="checked: agreeToTermsAndConditions">
+                  <div class="form-checkbox-indicator"></div>
+                </label>
+              </div>
+              <div class="form-checkboxandlabel-label">
+                <label for="AgreeToTermsAndConditions">I have reviewed, understand and consent to the <a href="/Documents//privacy%20disclosure%20and%20consent.pdf" target="_blank">Privacy Disclosure Statement and Consent</a> and
+                  <a href="/Terms-and-conditions" target="_blank">Terms &amp; Conditions</a></label>
+              </div>
+            </div>
+
+            <input type="hidden" name="MiscellaneousInfo.AgreeToTermsAndConditions" data-bind="value: agreeToTermsAndConditions" value="" class="" title="Please ensure that you have understood the Terms and Conditions" data-orig-title=""><span class="application-form-error" style="display: none;"></span>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <div class="form-group col-md-12 col-sm-12 float-left">
+    <label>do you agree our Terms & conditions</label>
+    <a class="btn btn-primary" href="#">Yes</a>
+    <a class="btn btn-primary" href="#">No</a>
+    <hr/>
+  </div>
+  <div class="form-group col-md-12 col-sm-12 float-left">
+      <a class="btn btn-primary" href="/ptdone">Apply</a>
+    <hr/>
+  </div>
+</div> <!-- /container -->
