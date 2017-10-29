@@ -15,29 +15,12 @@
       <h3>Your calendar</h3>
       <table class="table">
       <tbody>
-      <tr>
-        <td class="timeline">29/Oct/2017 <i class="fa fa-dot-circle-o" aria-hidden="true"></i>
+      <tr *ngFor="let appointment of appointments" >
+        <td class="timeline"> {{appointment.date}} <i class="fa fa-dot-circle-o" aria-hidden="true"></i>
         </td>
-        <td>Appointment(Mr. Davin Jones - Orthopedic)</td>
+        <td>{{appointment.detail}}</td>
       </tr>
-      <tr>
-          <td class="timeline">30/Oct/2017 <i class="fa fa-dot-circle-o" aria-hidden="true"></i></td>
-        <td>Surgery(Mr. John doe - Knee replacemnt)</td>
-      </tr>
-      <tr>
-          <td class="timeline">10/Nov/2017 <i class="fa fa-dot-circle-o" aria-hidden="true"></i></td>
-        <td>Surgery(Mr. John doe - Knee replacemnt)</td>
 
-      </tr>
-      <tr>
-          <td class="timeline">16/Nov/2017 <i class="fa fa-dot-circle-o" aria-hidden="true"></i></td>
-        <td>Appointment(Mr. Davin Jones)</td>
-
-      </tr>
-      <tr>
-          <td class="timeline">23/Nov/2017 <i class="fa fa-dot-circle-o" aria-hidden="true"></i></td>
-        <td>Surgery(Mr. John doe - Knee replacemnt)</td>
-      </tr>
 
       </tbody>
       </table>
@@ -50,61 +33,21 @@
         <thead>
           <th>Appointment</th>
           <th>Surgery</th>
+          <th>Date</th>
         </thead>
       <tbody>
-      <tr>
+
+      <tr *ngFor="let lead of leads" >
         <td class="timeline">
           <div class="checkbox">
             <label>
-              <input type="checkbox" value="remember-me">
+              <input type="checkbox" value="true" (change)="handleChange($event, lead.id)">
             </label>
           </div>
         </td>
-        <td>  Surgery for knee replacement</td>
+        <td> {{lead.detail}}</td>
+        <td> {{lead.date}}</td>
       </tr>
-      <tr>
-          <td class="timeline">
-              <div class="checkbox">
-                  <label>
-                    <input type="checkbox" value="remember-me">
-                  </label>
-                </div>
-          </td>
-        <td>Surgery for knee replacement</td>
-      </tr>
-      <tr>
-          <td class="timeline">
-            <div class="checkbox">
-              <label>
-                <input type="checkbox" value="remember-me">
-              </label>
-            </div>
-          </td>
-        <td>Surgery for knee replacement</td>
-
-      </tr>
-      <tr>
-          <td class="timeline">
-              <div class="checkbox">
-                  <label>
-                    <input type="checkbox" value="remember-me">
-                  </label>
-                </div>
-          </td>
-        <td>Surgery for knee replacement</td>
-
-      </tr>
-      <tr>
-          <td class="timeline">
-              <div class="checkbox">
-                  <label>
-                    <input type="checkbox" value="remember-me">
-                  </label>
-                </div>
-          </td>
-        <td>Surgery for knee replacement</td>
-      </tr>
-
       </tbody>
       </table>
 
