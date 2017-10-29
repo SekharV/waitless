@@ -6,7 +6,7 @@ import { PtHomeComponent } from './patient/home.component';
 import { PtAdminComponent } from './patient/admin.component';
 
 export const ROUTES: Routes = [
-  { path: '',      component: DrHomeComponent },
+  { path: '',      component: PtHomeComponent },
   { path: 'drhome',  component: DrHomeComponent },
   { path: 'drcalendar',  component: DrCalendarComponent },
   { path: 'drpayments',  component: DrPaymentsComponent },

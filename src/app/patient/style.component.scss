@@ -6,3 +6,14 @@
 .login-page-container{
   margin-bottom: 5%;
 }
+.timeline{
+  
+    border-right: 1px solid #ccc;
+    position: relative;
+    i {
+      position: absolute;
+      text-align: right;
+      right: -8px;
+      top:17px;
+    }
+  }
