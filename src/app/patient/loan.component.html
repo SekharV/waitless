@@ -1,9 +1,9 @@
 <div class="container col-md-12 col-sm-12">
 
-<h1>Apply for Loan</h1>
+<h1>apply for a loan</h1>
 
 
-  <div class="col-md-6 col-sm-12 float-left">
+  <!--div class="col-md-6 col-sm-12 float-left">
     <ul class="list-group">
       <li class="list-group-item active" (click)="onButtonGroupClick($event)">$500</li>
       <li class="list-group-item" (click)="onButtonGroupClick($event)">$1000</li>
@@ -12,9 +12,17 @@
       <li class="list-group-item" (click)="onButtonGroupClick($event)">$10000</li>
     </ul>
     <hr/>
+  </div-->
+  <div class="col-md-12 col-sm-12 float-left">
+      <div class="application-form-columnsof2">
+          <div class="application-form-column-2">
+          <h2>amount $ 10,055</h2>
+          </div>
+        </div>
   </div>
 
-  <div class="col-md-6 col-sm-12 float-left">
+
+  <div class="col-md-12 col-sm-12 float-left">
     <div class="application-form-section" id="personDetailsSection">
       <h3>ID check</h3>
       <div class="application-form-columnsof2">
@@ -22,25 +30,25 @@
           <div class="application-form-row">
             <label class="application-form-label" for="firstname">First Name </label>
             <div class="application-form-field">
-              <input type="text" id="firstname" name="PersonDetail.Firstname" class="text-field" data-bind="value: firstname, dataValidationBinding: firstname, titleCaseString: firstname , attr: { 'readonly' : !allowCustomerDetailEdit() }" data-input-format="name" maxlength="64" title="Please enter your first name" data-orig-title=""><span class="application-form-error" style="display: none;"></span>
+              <input type="text" id="firstname" name="PersonDetail.Firstname" value="Leonard" class="text-field" data-bind="value: firstname, dataValidationBinding: firstname, titleCaseString: firstname , attr: { 'readonly' : !allowCustomerDetailEdit() }" data-input-format="name" maxlength="64" title="Please enter your first name" data-orig-title=""><span class="application-form-error" style="display: none;"></span>
             </div>
           </div>
         </div>
       </div>
       <div class="application-form-columnsof2">
-        <div class="application-form-column-1">
+        <!--div class="application-form-column-1">
           <div class="application-form-row">
             <label class="application-form-label" for="middlename">Middle Name (optional)</label>
             <div class="application-form-field">
               <input type="text" id="middlename" name="PersonDetail.Middlename" class="text-field" data-bind="value: middlename, dataValidationBinding: middlename, titleCaseString: middlename, attr: { 'readonly' : !allowCustomerDetailEdit() }" data-input-format="name" maxlength="64" title=""><span class="application-form-error" style="display: none;"></span>
             </div>
           </div>
-        </div>
+        </div-->
         <div class="application-form-column-2">
           <div class="application-form-row">
             <label class="application-form-label" for="PersonDetail.Lastname">Last Name </label>
             <div class="application-form-field">
-              <input type="text" id="PersonDetail.Lastname" name="PersonDetail.Lastname" class="text-field" data-bind="value: lastname, dataValidationBinding: lastname, titleCaseString: lastname, attr: { 'readonly' : !allowCustomerDetailEdit() }" data-input-format="name" maxlength="64" title="Please enter your last name" data-orig-title=""><span class="application-form-error" style="display: none;"></span>
+              <input type="text" id="PersonDetail.Lastname" name="PersonDetail.Lastname" value="Xavier" class="text-field" data-bind="value: lastname, dataValidationBinding: lastname, titleCaseString: lastname, attr: { 'readonly' : !allowCustomerDetailEdit() }" data-input-format="name" maxlength="64" title="Please enter your last name" data-orig-title=""><span class="application-form-error" style="display: none;"></span>
             </div>
           </div>
         </div>
@@ -50,7 +58,7 @@
           <div class="application-form-row">
             <label class="application-form-label" for="PersonDetail.DateOfBirth">Date of birth </label>
             <div class="application-form-field application-form-field--date">
-              <input type="text" id="PersonDetail.DateOfBirth" name="PersonDetail.DateOfBirth" class="date text-field" placeholder="dd/mm/yyyy" data-bind="value: dateOfBirth, dataValidationBinding: dateOfBirth, attr: { 'readonly' : !allowCustomerDetailEdit() }, event:{click: initDateOfBirth, touchstart: initDateOfBirth}" data-input-format="date" maxlength="11" title="Please enter Date of Birth" data-orig-title=""><span class="application-form-error" style="display: none;"></span>
+              <input type="text" id="PersonDetail.DateOfBirth" value="1978-01-25" name="PersonDetail.DateOfBirth" class="date text-field" placeholder="dd/mm/yyyy" data-bind="value: dateOfBirth, dataValidationBinding: dateOfBirth, attr: { 'readonly' : !allowCustomerDetailEdit() }, event:{click: initDateOfBirth, touchstart: initDateOfBirth}" data-input-format="date" maxlength="11" title="Please enter Date of Birth" data-orig-title=""><span class="application-form-error" style="display: none;"></span>
               <label for="PersonDetail.DateOfBirth"></label>
             </div>
           </div>
@@ -60,7 +68,7 @@
           <div class="application-form-row">
             <label class="application-form-label" for="PersonDetail.EmailAddress">Email address</label>
             <div class="application-form-field">
-              <input type="email" id="PersonDetail.EmailAddress" name="PersonDetail.EmailAddress" class="text-field" data-bind="value: emailAddress, dataValidationBinding: emailAddress, attr: { 'readonly' : !allowCustomerDetailEdit() }" data-input-format="email" maxlength="300" title="Please enter a valid email address" data-orig-title=""><span class="application-form-error" style="display: none;"></span>
+              <input type="email" id="PersonDetail.EmailAddress" value="leo@test.com" name="PersonDetail.EmailAddress" class="text-field" data-bind="value: emailAddress, dataValidationBinding: emailAddress, attr: { 'readonly' : !allowCustomerDetailEdit() }" data-input-format="email" maxlength="300" title="Please enter a valid email address" data-orig-title=""><span class="application-form-error" style="display: none;"></span>
             </div>
           </div>
         </div>
@@ -73,7 +81,7 @@
               <div class="form-toggle-inner">
                 <label class="form-toggle-button" data-bind="css: { 'is-active': gender()=='M' }, click: setGender.bind($data, 'M')">
                   <div class="form-toggle-button-label">Male</div>
-                  <input id="gender-M" type="radio" value="M" data-bind="checked: gender, attr: { 'readonly' : !allowCustomerDetailEdit() }" name="PersonDetail.Gender">
+                  <input id="gender-M" type="radio" class="checked " checked="checked" data-bind="checked: gender, attr: { 'readonly' : !allowCustomerDetailEdit() }" name="PersonDetail.Gender">
                 </label>
                 <label class="form-toggle-button" data-bind="css: { 'is-active': gender()=='F' }, click: setGender.bind($data, 'F')">
                   <div class="form-toggle-button-label">Female</div>
@@ -91,7 +99,7 @@
               <div class="form-toggle-inner">
                 <label class="form-toggle-button" data-bind="css: { 'is-active': isPermanentResident()=='Y' }">
                   <div class="form-toggle-button-label">Yes</div>
-                  <input id="IsPermanentResident" type="radio" name="PersonDetail.IsPermanentResident" data-bind="checked: isPermanentResident" value="Y">
+                  <input id="IsPermanentResident" type="radio"  checked="checked" name="PersonDetail.IsPermanentResident" data-bind="checked: isPermanentResident" value="Y">
                 </label>
                 <label class="form-toggle-button" data-bind="css: { 'is-active': isPermanentResident()=='N' }">
                   <div class="form-toggle-button-label">No</div>
@@ -131,7 +139,7 @@
                   <div class="form-toggle-inner">
                     <label class="form-toggle-button" data-bind="css: { 'is-active':isSoleIncomeEarner()=='Y' }">
                       <div class="form-toggle-button-label">Yes</div>
-                      <input id="soleincomeearner" type="radio" name="PersonDetail.IsSoleIncomeEarner" value="Y" data-bind="checked: isSoleIncomeEarner">
+                      <input id="soleincomeearner" type="radio" checked="checked" name="PersonDetail.IsSoleIncomeEarner" value="Y" data-bind="checked: isSoleIncomeEarner">
                     </label>
                     <label class="form-toggle-button" data-bind="css: { 'is-active':isSoleIncomeEarner()=='N' }">
                       <div class="form-toggle-button-label">No</div>
@@ -166,7 +174,7 @@
               <div class="application-form-row">
                 <label class="application-form-label" data-bind="attr: { for: &quot;Incomeaftertax_&quot; + $index() }" for="Incomeaftertax_0"><span data-bind="text: incomeCaptionWithTaxStatus">Employment Income (after tax) </span><span class="application-form-tooltip tipso_style" rel="tooltip" data-bind="attr: { 'title' : tooltip }"></span></label>
                 <div class="application-form-field">
-                  <input id="Incomeaftertax_0" class="text-field" data-input-format="currency" data-bind="attr: { id: &quot;Incomeaftertax_&quot; + $index(), name:&quot;IncomeSources[&quot; + $index() + &quot;].IncomeAmount&quot;}, value:incomeAmount, dataValidationBinding: incomeAmount " type="text" name="IncomeSources[0].IncomeAmount" title=""><span class="application-form-error" style="display: none;"></span>
+                  <input id="Incomeaftertax_0" class="text-field" value="1237" data-input-format="currency" data-bind="attr: { id: &quot;Incomeaftertax_&quot; + $index(), name:&quot;IncomeSources[&quot; + $index() + &quot;].IncomeAmount&quot;}, value:incomeAmount, dataValidationBinding: incomeAmount " type="text" name="IncomeSources[0].IncomeAmount" title=""><span class="application-form-error" style="display: none;"></span>
                   <input type="hidden" data-bind="attr: { name:&quot;IncomeSources[&quot; + $index() + &quot;].IncomeSource&quot;}, value: incomeSource" name="IncomeSources[0].IncomeSource" value="">
                   <div data-bind="ifnot: requireIncomeSourceType">
                     <input type="hidden" data-bind="attr: { name:&quot;IncomeSources[&quot; + $index() + &quot;].IncomeSourceId&quot;}, value: incomeSourceId" name="IncomeSources[0].IncomeSourceId" value="65">
@@ -184,7 +192,7 @@
                     <div class="form-toggle-inner">
                       <label class="form-toggle-button" data-bind="css : { 'is-active': incomeFrequency()=='11' }">
                         <div class="form-toggle-button-label">Weekly</div>
-                        <input type="radio" value="11" id="IncomeSources[0].IncomeFrequency" data-bind="attr: { name:&quot;IncomeSources[&quot; + $index() + &quot;].IncomeFrequency&quot;}, checked: incomeFrequency,attr: { id:&quot;IncomeSources[&quot; + $index() + &quot;].IncomeFrequency&quot;}," name="ko_unique_1">
+                        <input type="radio" value="11" id="IncomeSources[0].IncomeFrequency" checked="checked" data-bind="attr: { name:&quot;IncomeSources[&quot; + $index() + &quot;].IncomeFrequency&quot;}, checked: incomeFrequency,attr: { id:&quot;IncomeSources[&quot; + $index() + &quot;].IncomeFrequency&quot;}," name="ko_unique_1">
                       </label>
 
                       <label class="form-toggle-button" data-bind="css : { 'is-active': incomeFrequency()=='12' }">
@@ -212,7 +220,7 @@
               <div class="application-form-row">
                 <label class="application-form-label" data-bind="attr: { for: &quot;Incomeaftertax_&quot; + $index() }" for="Incomeaftertax_1"><span data-bind="text: incomeCaptionWithTaxStatus">Government Benefits</span><span class="application-form-tooltip tipso_style" rel="tooltip" data-bind="attr: { 'title' : tooltip }"></span></label>
                 <div class="application-form-field">
-                  <input id="Incomeaftertax_1" class="text-field" data-input-format="currency" data-bind="attr: { id: &quot;Incomeaftertax_&quot; + $index(), name:&quot;IncomeSources[&quot; + $index() + &quot;].IncomeAmount&quot;}, value:incomeAmount, dataValidationBinding: incomeAmount " type="text" name="IncomeSources[1].IncomeAmount" title=""><span class="application-form-error" style="display: none;"></span>
+                  <input id="Incomeaftertax_1" value="0" class="text-field" data-input-format="currency" data-bind="attr: { id: &quot;Incomeaftertax_&quot; + $index(), name:&quot;IncomeSources[&quot; + $index() + &quot;].IncomeAmount&quot;}, value:incomeAmount, dataValidationBinding: incomeAmount " type="text" name="IncomeSources[1].IncomeAmount" title=""><span class="application-form-error" style="display: none;"></span>
                   <input type="hidden" data-bind="attr: { name:&quot;IncomeSources[&quot; + $index() + &quot;].IncomeSource&quot;}, value: incomeSource" name="IncomeSources[1].IncomeSource" value="">
                   <div data-bind="ifnot: requireIncomeSourceType">
                     <input type="hidden" data-bind="attr: { name:&quot;IncomeSources[&quot; + $index() + &quot;].IncomeSourceId&quot;}, value: incomeSourceId" name="IncomeSources[1].IncomeSourceId" value="26">
@@ -230,7 +238,7 @@
                     <div class="form-toggle-inner">
                       <label class="form-toggle-button" data-bind="css : { 'is-active': incomeFrequency()=='11' }">
                         <div class="form-toggle-button-label">Weekly</div>
-                        <input type="radio" value="11" id="IncomeSources[1].IncomeFrequency" data-bind="attr: { name:&quot;IncomeSources[&quot; + $index() + &quot;].IncomeFrequency&quot;}, checked: incomeFrequency,attr: { id:&quot;IncomeSources[&quot; + $index() + &quot;].IncomeFrequency&quot;}," name="ko_unique_2">
+                        <input type="radio" value="11" checked="checked" id="IncomeSources[1].IncomeFrequency" data-bind="attr: { name:&quot;IncomeSources[&quot; + $index() + &quot;].IncomeFrequency&quot;}, checked: incomeFrequency,attr: { id:&quot;IncomeSources[&quot; + $index() + &quot;].IncomeFrequency&quot;}," name="ko_unique_2">
                       </label>
 
                       <label class="form-toggle-button" data-bind="css : { 'is-active': incomeFrequency()=='12' }">
@@ -262,7 +270,7 @@
             <div class="application-form-row">
               <label class="application-form-label" for="RentMortgageRepayment">Housing expenses<span class="application-form-tooltip tipso_style" rel="tooltip"></span></label>
               <div class="application-form-field">
-                <input type="text" id="RentMortgageRepayment" class="text-field" data-input-format="currency" data-bind="value: rentMortgageRepayment, dataValidationBinding: rentMortgageRepayment" name="Expenses.RentMortgageRepayment" title="Please enter your rent/mortgage expenses" data-orig-title=""><span class="application-form-error" style="display: none;"></span>
+                <input type="text" value="200" id="RentMortgageRepayment" class="text-field" data-input-format="currency" data-bind="value: rentMortgageRepayment, dataValidationBinding: rentMortgageRepayment" name="Expenses.RentMortgageRepayment" title="Please enter your rent/mortgage expenses" data-orig-title=""><span class="application-form-error" style="display: none;"></span>
               </div>
             </div>
           </div>
@@ -275,7 +283,7 @@
                   <div class="form-toggle-inner">
                     <label class="form-toggle-button" data-bind="css : { 'is-active': rentMortgagePaymentFrequencyId()=='11' }">
                       <div class="form-toggle-button-label">Weekly</div>
-                      <input type="radio" value="11" id="rentMortgagePaymentFrequencyId" data-bind="checked: rentMortgagePaymentFrequencyId" name="Expenses.RentMortgagePaymentFrequencyId">
+                      <input type="radio" value="11" checked="checked" id="rentMortgagePaymentFrequencyId" data-bind="checked: rentMortgagePaymentFrequencyId" name="Expenses.RentMortgagePaymentFrequencyId">
                     </label>
 
                     <label class="form-toggle-button" data-bind="css : { 'is-active': rentMortgagePaymentFrequencyId()=='12' }">
@@ -302,7 +310,7 @@
             <div class="application-form-row">
               <label class="application-form-label" for="LivingExpenses">Living Expenses <span class="application-form-tooltip tipso_style" rel="tooltip"></span></label>
               <div class="application-form-field">
-                <input type="text" id="LivingExpenses" class="text-field" data-input-format="currency" data-bind="value: livingExpensesAmount, dataValidationBinding: livingExpensesAmount" name="Expenses.LivingExpensesAmount" title="Please enter your living expenses" data-orig-title=""><span class="application-form-error" style="display: none;"></span>
+                <input type="text" id="LivingExpenses" value="400"class="text-field" data-input-format="currency" data-bind="value: livingExpensesAmount, dataValidationBinding: livingExpensesAmount" name="Expenses.LivingExpensesAmount" title="Please enter your living expenses" data-orig-title=""><span class="application-form-error" style="display: none;"></span>
               </div>
             </div>
           </div>
@@ -315,7 +323,7 @@
                   <div class="form-toggle-inner">
                     <label class="form-toggle-button" data-bind="css : { 'is-active': livingExpensesPaymentFrequencyId()=='11' }">
                       <div class="form-toggle-button-label">Weekly</div>
-                      <input type="radio" value="11" data-bind="checked: livingExpensesPaymentFrequencyId" id="LivingExpensesPaymentFrequencyWeekly" name="Expenses.LivingExpensesPaymentFrequencyId">
+                      <input type="radio" value="11" checked="checked" data-bind="checked: livingExpensesPaymentFrequencyId" id="LivingExpensesPaymentFrequencyWeekly" name="Expenses.LivingExpensesPaymentFrequencyId">
                     </label>
 
                     <label class="form-toggle-button" data-bind="css : { 'is-active': livingExpensesPaymentFrequencyId()=='12' }">
@@ -341,7 +349,7 @@
             <div class="application-form-row">
               <label class="application-form-label" for="NumberofCreditCards">Number of Credit Cards <span class="application-form-tooltip tipso_style" rel="tooltip"></span></label>
               <div class="application-form-field">
-                <input type="number" id="NumberofCreditCards" class="text-field" data-input-format="integer" data-bind="value: numberOfCreditCards, dataValidationBinding: numberOfCreditCards" name="Expenses.NumberOfCreditCards" title="Please enter your number of credit cards" data-orig-title=""><span class="application-form-error" style="display: none;"></span>
+                <input type="number" id="NumberofCreditCards" value="2" class="text-field" data-input-format="integer" data-bind="value: numberOfCreditCards, dataValidationBinding: numberOfCreditCards" name="Expenses.NumberOfCreditCards" title="Please enter your number of credit cards" data-orig-title=""><span class="application-form-error" style="display: none;"></span>
               </div>
             </div>
           </div>
@@ -349,7 +357,7 @@
             <div class="application-form-row">
               <label class="application-form-label" for="TotalLimitofCreditCards">Total Limit of Credit Cards <span class="application-form-tooltip tipso_style" rel="tooltip"></span></label>
               <div class="application-form-field">
-                <input type="text" id="TotalLimitofCreditCards" class="text-field" data-input-format="currency" data-bind="value: totalLimitOfCreditCards, dataValidationBinding: totalLimitOfCreditCards" name="Expenses.TotalLimitOfCreditCards" title="Please enter total limit of your credit cards" data-orig-title=""><span class="application-form-error" style="display: none;"></span>
+                <input type="text" id="TotalLimitofCreditCards" value="10000"class="text-field" data-input-format="currency" data-bind="value: totalLimitOfCreditCards, dataValidationBinding: totalLimitOfCreditCards" name="Expenses.TotalLimitOfCreditCards" title="Please enter total limit of your credit cards" data-orig-title=""><span class="application-form-error" style="display: none;"></span>
               </div>
             </div>
           </div>
@@ -359,7 +367,7 @@
             <div class="application-form-row">
               <label class="application-form-label" for="TotalMonthlyLoanRepayment">Total Monthly Loan Repayment <span class="application-form-tooltip tipso_style" rel="tooltip"></span></label>
               <div class="application-form-field">
-                <input type="text" id="TotalMonthlyLoanRepayment" class="text-field" data-input-format="currency" data-bind="value: totalMonthlyLoanRepayment, dataValidationBinding: totalMonthlyLoanRepayment" name="Expenses.TotalMonthlyLoanRepayment" title="Please enter how much you pay every month for your loan repayments. If you have no loans, just put in 0" data-orig-title=""><span class="application-form-error" style="display: none;"></span>
+                <input type="text" id="TotalMonthlyLoanRepayment" value="800"class="text-field" data-input-format="currency" data-bind="value: totalMonthlyLoanRepayment, dataValidationBinding: totalMonthlyLoanRepayment" name="Expenses.TotalMonthlyLoanRepayment" title="Please enter how much you pay every month for your loan repayments. If you have no loans, just put in 0" data-orig-title=""><span class="application-form-error" style="display: none;"></span>
               </div>
             </div>
           </div>
@@ -397,7 +405,7 @@
                   <div class="application-form-row">
                     <label class="application-form-label" data-bind="attr: { for: 'Creditor_' + $index() }" for="Creditor_0">Creditor</label>
                     <div class="application-form-field">
-                      <input type="text" class="text-field" maxlength="200" data-bind="attr: { id: &quot;Creditor_&quot; + $index(), name: &quot;FixedLoans[&quot; + $index() + &quot;].Creditor&quot; }, value: creditor, dataValidationBinding: creditor" data-input-format="alpha" id="Creditor_0" name="FixedLoans[0].Creditor">
+                      <input type="text" class="text-field" value="NAB" maxlength="200" data-bind="attr: { id: &quot;Creditor_&quot; + $index(), name: &quot;FixedLoans[&quot; + $index() + &quot;].Creditor&quot; }, value: creditor, dataValidationBinding: creditor" data-input-format="alpha" id="Creditor_0" name="FixedLoans[0].Creditor">
                     </div>
                   </div>
                 </div>
@@ -405,7 +413,7 @@
                   <div class="application-form-row">
                     <label class="application-form-label" data-bind="attr: { for: 'BalanceRemaining_' + $index() }" for="BalanceRemaining_0">Repayment Amount</label>
                     <div class="application-form-field">
-                      <input type="text" class="text-field" data-input-format="currency" data-bind="attr: { id: &quot;BalanceRemaining_&quot; + $index(), name: &quot;FixedLoans[&quot; + $index() + &quot;].RepaymentAmount&quot; }, value: repaymentAmount, dataValidationBinding: repaymentAmount" id="BalanceRemaining_0" name="FixedLoans[0].RepaymentAmount">
+                      <input type="text" class="text-field" value="10000" data-input-format="currency" data-bind="attr: { id: &quot;BalanceRemaining_&quot; + $index(), name: &quot;FixedLoans[&quot; + $index() + &quot;].RepaymentAmount&quot; }, value: repaymentAmount, dataValidationBinding: repaymentAmount" id="BalanceRemaining_0" name="FixedLoans[0].RepaymentAmount">
                     </div>
                   </div>
                 </div>
@@ -420,7 +428,7 @@
                       <div class="form-toggle-inner">
                         <label class="form-toggle-button" data-bind="css : { 'is-active': repaymentFrequency()=='11'}">
                           <div class="form-toggle-button-label">Weekly</div>
-                          <input type="radio" value="11" data-bind="attr: { name: &quot;FixedLoans[&quot; + $index() + &quot;].RepaymentFrequency&quot; }, checked: repaymentFrequency, attr: { id: &quot;PaymentFrequency_&quot; + $index() }" id="PaymentFrequency_0" name="ko_unique_3">
+                          <input type="radio" value="11" checked="checked" data-bind="attr: { name: &quot;FixedLoans[&quot; + $index() + &quot;].RepaymentFrequency&quot; }, checked: repaymentFrequency, attr: { id: &quot;PaymentFrequency_&quot; + $index() }" id="PaymentFrequency_0" name="ko_unique_3">
                         </label>
 
                         <label class="form-toggle-button" data-bind="css : { 'is-active': repaymentFrequency()=='12' }">
@@ -474,7 +482,7 @@
             <div class="application-form-row">
               <label class="application-form-label" for="AccountName">Your Account Name <span class="application-form-tooltip tipso_style" rel="tooltip"></span></label>
               <div class="application-form-field">
-                <input type="text" id="AccountName" name="BankDetail.AccountName" class="text-field" data-bind="value: accountName, dataValidationBinding: accountName" data-input-format="name" maxlength="100" title="Please enter an account name" data-orig-title=""><span class="application-form-error" style="display: none;"></span>
+                <input type="text" id="AccountName" name="BankDetail.AccountName" value="Leonard Xavier" class="text-field" data-bind="value: accountName, dataValidationBinding: accountName" data-input-format="name" maxlength="100" title="Please enter an account name" data-orig-title=""><span class="application-form-error" style="display: none;"></span>
               </div>
             </div>
           </div>
@@ -492,16 +500,16 @@
             <div class="application-form-row">
               <label class="application-form-label" for="BSB">BSB</label>
               <div class="application-form-field">
-                <input type="number" name="BankDetail.BSB" id="BSB" class="text-field" data-bind="value: bsb, dataValidationBinding: bsb" maxlength="7" data-input-format="bsbNumber" title="Please enter a valid BSB number." data-orig-title=""><span class="application-form-error" style="display: none;"></span>
-                <input type="hidden" name="BankDetail.BSBValidated" class="text-field" data-bind="value: bsbValidated" value="N">
-                <input type="hidden" name="BankDetail.BankName" class="text-field" data-bind="value: bankName" value="">
+                <input type="number" name="BankDetail.BSB" id="BSB" value="063213" class="text-field" data-bind="value: bsb, dataValidationBinding: bsb" maxlength="7" data-input-format="bsbNumber" title="Please enter a valid BSB number." data-orig-title=""><span class="application-form-error" style="display: none;"></span>
+                <input type="hidden" name="BankDetail.BSBValidated"  class="text-field" data-bind="value: bsbValidated" value="N">
+                <input type="hidden" name="BankDetail.BankName"  class="text-field" data-bind="value: bankName" value="">
               </div>
             </div>
           </div>
           <div class="application-form-column-2">
             <label class="application-form-label" for="AccountNumber">Your Account Number</label>
             <div class="application-form-field">
-              <input type="text" id="AccountNumber" name="BankDetail.AccountNumber" class="text-field" data-input-format="integer" pattern="[0-9]*" data-bind="value: accountNumber, dataValidationBinding: accountNumber" maxlength="30" title="Please enter an account number" data-orig-title=""><span class="application-form-error" style="display: none;"></span>
+              <input type="text" id="AccountNumber" name="BankDetail.AccountNumber" value="9856874585" class="text-field" data-input-format="integer" pattern="[0-9]*" data-bind="value: accountNumber, dataValidationBinding: accountNumber" maxlength="30" title="Please enter an account number" data-orig-title=""><span class="application-form-error" style="display: none;"></span>
             </div>
           </div>
         </div>
@@ -524,7 +532,7 @@
                   </label>
                   <label class="form-toggle-button" data-bind="css: { 'is-active': canForeseeReasonLoanCannotBeRepaid()=='N' }">
                     <div class="form-toggle-button-label">No</div>
-                    <input type="radio" name="isableToRepay" data-bind="checked: canForeseeReasonLoanCannotBeRepaid" value="N">
+                    <input type="radio" name="isableToRepay" checked="checked" data-bind="checked: canForeseeReasonLoanCannotBeRepaid" value="N">
                   </label>
                 </div>
               </div>
@@ -615,8 +623,8 @@
   </div>
   <div class="form-group col-md-12 col-sm-12 float-left">
     <label>do you agree our Terms & conditions</label>
-    <a class="btn btn-primary" href="#">Yes</a>
-    <a class="btn btn-primary" href="#">No</a>
+    <a class="btn btn-primary" href="/ptdone">Yes</a>
+    <a class="btn btn-basic" href="#">No</a>
     <hr/>
   </div>
   <div class="form-group col-md-12 col-sm-12 float-left">

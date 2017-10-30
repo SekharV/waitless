@@ -24,4 +24,8 @@ export class PtLoanComponent implements OnInit {
     }
   }
 
+  isPermanentResident(){
+    return 'Y';
+  }
+
 }

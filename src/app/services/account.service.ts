@@ -37,7 +37,7 @@ export class AccountService {
       var response = data.json();
       this.AuthorizationCode = response.loginResponse.tokens[0].value;
       console.log(this.AuthorizationCode);
-      //this.getListOfpractitioners();
+      this.getListOfpractitioners();
     });
    }
 
